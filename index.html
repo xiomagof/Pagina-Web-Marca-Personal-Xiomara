@@ -125,8 +125,10 @@
   @media (min-width:761px){ .nav-mobile{display:none!important} }
 
   /* estados hover convertidos a CSS real */
-  .nav-link{transition:color .2s ease;}
+  .nav-link{position:relative; transition:color .2s ease;}
   .nav-link:hover{color:#001D39;}
+  .nav-link::after{content:""; position:absolute; left:0; right:0; bottom:-5px; height:1.5px; background:#49769F; transform:scaleX(0); transform-origin:left; transition:transform .28s ease;}
+  .nav-link:hover::after{transform:scaleX(1);}
   #hero-cta{transition:transform .25s ease, background .25s ease, box-shadow .25s ease;}
   #hero-cta:hover{background:#0A4174; transform:translateY(-2px); box-shadow:0 12px 28px rgba(21,94,158,0.32);}
   #contact-whatsapp{transition:transform .35s ease, background .3s ease, box-shadow .3s ease;}
@@ -466,7 +468,7 @@
 
     <!-- ============ FOOTER ============ -->
     <footer style="border-top:1px solid rgba(251,248,241,0.12);">
-      <div style="max-width:1120px; margin:0 auto; padding:clamp(40px,6vw,56px) 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:28px 40px;">
+      <div style="max-width:1120px; margin:0 auto; padding:clamp(40px,6vw,56px) 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:flex-start; gap:28px 56px;">
 
         <div>
           <span style="display:block; font-family:'Instrument Serif',serif; font-size:22px; color:#FBF8F1;">Xiomara González</span>
